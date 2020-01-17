@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Gasto semanal</title>
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" href="estilos.css">
+  </head>
+  <body>
+    <h2>Gasto semanal</h2>
+    <form action="#">
+      <div class="inputs">
+        <h3>Añadí tus gastos acá</h3>
+        <label for="gasto">Gasto:</label>
+        <input type="text" name="nombre del gasto" placeholder="Nombre del gasto" required>
+        <label for="monto">Monto:</label>
+        <input type="text" name="monto del gasto" placeholder="Monto del gasto" required>
+        <button type="submit" disabled name="button">Agregar</button>
+      </div>
+      <div class="gastos">
+        <h3>Listado</h3>
+        <p>Presupuesto: $<span></span></p>
+        <p>Restante: $<span></span></p>
+      </div>
+    </form>
+  </body>
+  <script src="app.js">
+
+  </script>
+</html>

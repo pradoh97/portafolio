@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="estilos.css">
+    <meta name="viewport" content="initial-scale=1">
+    <title>B gun</title>
+  </head>
+  <body>
+    <header id="header">
+      <img id="header-img" src="img/logo.png" alt="logo de b gun">
+      <nav id="nav-bar">
+        <span id="mostrar-menu">Mostrar menú</span>
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#catalogo" class="nav-link">Catálogo</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+    </header>
+    <main>
+      <article id="nosotros">
+        <div>
+          <h2>B gun</h2>
+          <p>Somos productores de comidas envasadas veganas para todas las edades. Exportamos a todo el mundo y tenemosproductoras a nivel local en cada continente.</p>
+          <p>Tenemos lo que necesitas para cualquier tipo de empresa o institución: desde aerolineas hasta colegios.</p>
+          <p>Siempre sane nunca insane.</p>
+          <iframe id="video" src="https://www.youtube.com/embed/2AYOViszK_A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </article>
+        </div>
+      <article id="catalogo">
+        <div class="producto">
+          <h3>Vegetales</h3>
+          <figure>
+            <img src="img/vegetales.jpg" alt="menu de vegetales">
+            <figcaption>Todo tipo de cocciones y vegetales para menues.</figcaption>
+          </figure>
+        </div>
+        <div class="producto">
+          <h3>Pastas</h3>
+          <figure>
+            <img src="img/pastas.jpg" alt="menu de pastas">
+            <figcaption>Todo tipo de cocciones y salsas para menues.</figcaption>
+          </figure>
+        </div>
+        <div class="producto">
+          <h3>Pizzas</h3>
+          <figure>
+            <img src="img/pizzas.jpg" alt="menu de pizzas">
+            <figcaption>Todo tipo de masas y añadiduras para menues.</figcaption>
+          </figure>
+        </div>
+        <div class="producto">
+          <h3>Empanadas</h3>
+          <figure>
+            <img src="img/empanadas.jpg" alt="menu de empanadas">
+            <figcaption>Todo tipo de repulgues y rellenos para menues.</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article id="contacto">
+        <form id="form" action=" https://www.freecodecamp.com/email-submit" method="post">
+          <h2>Envianos tu consulta</h2>
+          <textarea name="name" rows="8" cols="80"></textarea>
+          <input id="email" type="email" placeholder="algo@ejemplo.com" required>
+          <input type="submit" name="" value="enviar" id="submit">
+        </form>
+      </article>
+    </main>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

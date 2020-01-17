@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/contenido-editor.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script type="text/javascript" src="js/main.js"></script>
+    <title>Editor de texto</title>
+  </head>
+  <body>
+    <div class="editor">
+      <form class="" action="index.html" method="post">
+        <div class="cinta superior">
+          <div class="secciones">
+            <div>
+              <select id="estilo-texto">
+                <option value="texto normal" selected>Texto normal</option>
+                <option value="titulo1">Título 1</option>
+                <option value="titulo2">Título 2</option>
+                <option value="titulo3">Título 3</option>
+              </select>
+              <input id="tamano-fuente" type="number" value="14" min="0">
+            </div>
+            <div>
+              <button id="negrita" type="button" name="button"><i class="fas fa-bold"></i></button>
+              <button id="italica" type="button" name="button"><i class="fas fa-italic"></i></button>
+              <button id="subrayado" type="button" name="button"><i class="fas fa-underline"></i></button>
+            </div>
+            <div>
+              <button id="alinear-izquierda" type="button" name="button"><i class="fas fa-align-left"></i></button>
+              <button id="alinear-centro" type="button" name="button"><i class="fas fa-align-center"></i></button>
+              <button id="alinear-derecha" type="button" name="button"><i class="fas fa-align-right"></i></button>
+              <button id="justificar" type="button" name="button"><i class="fas fa-align-justify"></i></button>
+            </div>
+            <div>
+              <button id="insertar-enlace" type="button" name="button"><i class="fas fa-link"></i></button>
+              <button id="insertar-imagen" type="button" name="button"><i class="far fa-image"></i></button>
+              <button id="insertar-video" type="button" name="button"><i class="fas fa-file-video"></i></button>
+              <button id="insertar-adjunto" type="button" name="button"><i class="fas fa-paperclip"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div id="contenido" class="contenido" contenteditable="true">
+        </div>
+
+        <div class="cinta inferior">
+          <div class="opciones">
+            <button id="enviar" onclick="setCaret()" type="button" name="button"><i class="fas fa-paper-plane"></i></button>
+            <button id="guardar" type="button" name="button"><i class="fas fa-save"></i></button>
+            <button id="descartar" type="button" name="button"><i class="fas fa-trash-alt"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

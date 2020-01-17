@@ -1,0 +1,246 @@
+/*
+  ESTILOS PARA ESCRITORIO
+*/
+@media (min-width: 601px){
+  header{
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  .user-menu{
+    justify-content: space-between;
+  }
+  .buscar{
+    flex-flow: row wrap;
+  }
+  .buscar > input{
+    border-right: none;
+    margin-left: 1em;
+  }
+  header > nav{
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  header > nav > a{
+    padding: 0.5em 1em 1em;
+  }
+  footer > nav{
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  footer > nav > a:not(:last-child){
+    margin-right: 1em;
+  }
+  .seccion.libros{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px, 1fr));
+    text-align: center;
+    grid-gap: 1em;
+  }
+  .libro{
+    margin: 0;
+  }
+}
+
+/*
+  ESTILOS PARA MÓVILES
+*/
+@media (max-width: 600px){
+  header{
+    flex-flow: row wrap;
+    align-items: center;
+  }
+  .user-menu{
+    flex-grow: 1;
+  }
+  .buscar{
+    flex-flow: column;
+  }
+  .buscar > label{
+    margin-bottom: 0.5em;
+  }
+  .user-menu > nav{
+    padding-top: 1em;
+  }
+  header > nav{
+    flex-flow: column;
+  }
+  header > nav > a{
+    padding: 1em;
+  }
+  header > nav > a:hover, header > nav > a:active{
+    background-color: var(--color-normal-light);
+  }
+  footer > nav{
+    flex-flow: column;
+    align-items: flex-start;
+  }
+  .seccion.libros{
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+    text-align: center;
+  }
+}
+
+/*
+  ESTILOS BASE Y RESETS
+*/
+:root{
+  font-size: calc(0.7em + 0.5vmax);
+  font-family: sans-serif;
+}
+body{
+  margin: 0;
+  --color-normal: rgba(34, 32, 33, 1);
+  --color-normal-light: rgba(150, 150, 150, 1);
+  --color-enfasis: rgba(196, 13, 66, 1);
+  --color-contraste: rgba(255,255,255,1);
+}
+a{
+  text-decoration: underline;
+  color: inherit;
+}
+a:hover{
+  text-shadow: 0 0 0.01em var(--color-contraste);
+}
+
+/*
+  ESTILOS DEL HEADER
+*/
+header{
+  position: sticky;
+  top: 0;
+  color: var(--color-contraste);
+  background-color: var(--color-enfasis);
+  display: flex;
+  font-size: 1em;
+}
+.logo{
+  height: 64px;
+}
+.logo, .user-menu{
+  padding: 1em;
+}
+.user-menu{
+  display: flex;
+  flex-flow: column;
+}
+.user-menu > nav{
+  text-align: right;
+}
+.buscar{
+  display: flex;
+}
+.buscar > label{
+  text-align: center;
+  align-self: center;
+}
+.buscar > button{
+  border: none;
+  background-color: var(--color-normal);
+  color: var(--color-contraste);
+  cursor: pointer;
+}
+.buscar > button:hover{
+  box-shadow: 0 0 4em rgba(255,255,255,0.1) inset;
+}
+.buscar > button:active{
+  box-shadow: 0 0 0.5em rgba(255,255,255,0.3) inset;
+}
+.buscar > input{
+  border: 2px solid var(--color-normal-light);
+}
+.buscar > input:hover{
+  box-shadow: 0 0 0.4em rgba(0,0,0,0.5);
+}
+.buscar > input:focus{
+  border-color:rgba(0,0,0,1);
+}
+.buscar > button, .buscar > input{
+  padding: 0.5em;
+}
+.user-menu > nav > a + a{
+  border-left: 1px solid var(--color-contraste);
+  padding-left: 4px;
+}
+header > nav{
+  background: var(--color-normal);
+  display: flex;
+  padding: 0.5em 0;
+}
+header > nav > span{
+  text-align: center;
+  cursor: pointer;
+  padding: 1em 0;
+}
+
+/*
+  ESTILOS DEL FOOTER
+*/
+footer{
+  background-color: var(--color-normal);
+  color: var(--color-contraste);
+  padding: 1em;
+}
+footer a{
+  color: var(--color-enfasis);
+  padding: 0.5em 0.5em 0.5em 0;
+  display: inline-block
+}
+footer > nav{
+  margin-bottom: 1em;
+  display: flex;
+}
+
+/*
+  ESTILOS DEL MAIN
+*/
+main{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 1em;
+}
+.tarjeta h1{
+  margin: 0.5em 0;
+}
+.tarjeta{
+  flex-grow: 1;
+  border: 1px solid var(--color-normal-light);
+  padding: 0.5em 1em;
+  margin: 1em;
+  display: flex;
+  flex-flow: column;
+}
+.tarjeta span{
+  font-weight: bold;
+  flex-basis: 100%;
+  margin: 0.5em 0;
+}
+.tarjeta a{
+  padding: 0.5em 1em 0.5em 0;
+}
+.tarjeta a:hover{
+  text-shadow: 0 0 0.01em var(--color-normal);
+}
+.seccion{
+  border-top: 1px solid var(--color-normal-light);
+  padding: 1em 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+.libro img{
+  width: 100%;
+  max-width: 150px;
+}
+
+/*
+  CLASES GENERALES
+*/
+.full-width{
+  width: 100%;
+}
+.texto-destacado{
+  color: var(--color-enfasis);
+}

@@ -1,0 +1,137 @@
+@media (max-width: 500px){
+  form{
+    margin: 1em;
+  }
+}
+@media (min-width: 500px){
+  .inputs, .gastos{
+    padding: 1em 2em;
+  }
+  form{
+    margin: auto;
+    width: 70%;
+  }
+}
+:root{
+  font-size: calc(0.8em + 0.3vmax);
+}
+body{
+  font-family: sans-serif;
+  margin: 0;
+	background: linear-gradient(to right, #004e92, #000428);
+}
+
+body > h2{
+  color: rgb(255, 255, 255);
+  font-size: 3.5em;
+  text-align: center;
+  font-weight: 100;
+}
+form{
+  background: rgb(255, 255, 255);
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
+  padding: 1em;
+  display: flex;
+  flex-flow: row wrap;
+}
+form h3{
+  text-align: center;
+  font-weight: 100;
+  font-size: 2em;
+  margin-top: 0;
+}
+.inputs, .gastos{
+  display: flex;
+  flex-grow: 1;
+  flex-flow: column nowrap;
+}
+.inputs label{
+  font-size: 1em;
+}
+.inputs input{
+  padding: 0.6em;
+  box-sizing: border-box;
+  margin-bottom: 1.5em;
+  font-size: 1em;
+  border: 1px solid rgb(200, 200, 200);
+  width: 100%;
+}
+.inputs button{
+  align-self: flex-start;
+  font-size: 1em;
+  color: rgb(255, 255, 255);
+  background: #007bff;
+  padding: 0.5em 1em;
+  border: 0;
+  cursor: pointer;
+}
+.inputs button:hover{
+  box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.3);
+}
+.inputs button:active{
+  box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.3), 0 0 1em rgba(0, 0, 0, 0.2) inset;
+}
+.inputs button:disabled{
+  background-color: rgb(220, 220, 220);
+  color: rgb(120, 120, 120);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.gastos{
+  flex-grow: 2;
+}
+.inputs p, .gastos p{
+  padding: 1em;
+}
+form p:nth-child(2){
+	color: rgb(0, 64, 133);
+	background-color: rgb(204, 229, 255);
+	border-color: rgb(184, 218, 255);
+}
+form p:nth-child(3), .mensaje.completado{
+	color: rgb(21, 87, 36);
+	background-color: rgb(212, 237, 218);
+	border-color: rgb(195, 230, 203);
+}
+.gastos .restante-medio, .mensaje.advertencia{
+  color: rgb(87, 84, 21);
+  background-color: rgb(237, 235, 212);
+	border-color: rgb(230, 225, 195);
+}
+.gastos .restante-bajo, .mensaje.error{
+  color: rgb(87, 21, 21);
+  background-color: rgb(237, 212, 212);
+	border-color: rgb(230, 195, 195);
+}
+
+.gasto{
+  padding: 1em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  border: 1px solid rgb(200, 200, 200);
+  border-top: 0;
+}
+.gasto:first-of-type{
+    border: 1px solid rgb(200, 200, 200);
+}
+.gasto span:last-child{
+  color: rgb(255, 255, 255);
+  background-color: rgb(176, 66, 66);
+	border-color: rgb(230, 195, 195);
+  padding: 0.2em 0.7em;
+  border-radius: 20%/50%;
+}
+
+.campo-invalido{
+  transition-property: box-shadow;
+  transition-duration: 0.2s;
+  border-bottom: 1px solid rgb(255, 0, 0);
+  box-shadow: 0 2px rgb(255, 0, 0);
+}
+.mensaje{
+	color: rgb(0, 64, 133);
+	background-color: rgb(204, 229, 255);
+	border-color: rgb(184, 218, 255);
+}

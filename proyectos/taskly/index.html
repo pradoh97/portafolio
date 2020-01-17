@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Mis tareas</title>
+  </head>
+  <body>
+    <header>
+      <h2 class="logo" title="Ir al inicio"><a href="#">Taskly</a></h2>
+      <h2>Mirá lo que tenes para hoy
+        <a href="#" id="usuario" title="Modificar nombre">Hernán</a>
+      </h2>
+    </header>
+    <main>
+      <section class="agregar-tarea">
+        <h2>Agrega una tarea</h2>
+        <form action="#">
+          <input type="text" autocomplete="off" id="nueva-tarea" placeholder="¿Qué necesitas que recuerde?"><input type="submit" value="Agregar">
+        </form>
+      </section>
+      <section class="tareas">
+        <h2>Tus tareas<br><span id="conteo-tareas"></span>
+         </h2>
+        <ul>
+        </ul>
+      </section>
+    </main>
+  </body>
+  <script src="app.js">
+
+  </script>
+</html>

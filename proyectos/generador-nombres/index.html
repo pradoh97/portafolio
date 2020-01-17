@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="estilos.css">
+    <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1">
+    <title>Generador de nombres</title>
+  </head>
+  <body>
+    <h2>Generador de nombres</h2>
+    <div>
+      <form action="#" method="post">
+        <label for="origen">Origen del nombre:</label>
+        <select id="origen">
+          <option value=''>-- Seleccione --</option>
+          <option value="argentina">Argentina</option>
+          <option value="brazil">Brasil</option>
+          <option value="colombia">Colombia</option>
+          <option value="costa rica">Costa Rica</option>
+          <option value="france">Francia</option>
+          <option value="italy">Italia</option>
+          <option value="mexico">Mexico</option>
+          <option value="portugal">Portugal</option>
+          <option value="spain">España</option>
+        </select>
+        <label for="genero">Género:</label>
+        <select id="genero">
+          <option value="">-- Seleccione --</option>
+          <option value="male">Hombre</option>
+          <option value="female">Mujer</option>
+        </select>
+        <label for="cantidad">Nombres a generar:</label>
+        <input type="text" id="cantidad">
+        <button type="submit" name="button">Generar</button>
+      </form>
+      <div class="listado">
+      </div>
+    </div>
+  </body>
+  <script src="app.js">
+
+  </script>
+</html>

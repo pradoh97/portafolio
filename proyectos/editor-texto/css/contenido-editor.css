@@ -1,0 +1,27 @@
+.contenido{
+  overflow-y: scroll;
+  font-size: 14px;
+  font-family: 'Montserrat', 'sans-serif';
+}
+.contenido a{
+  cursor: pointer;
+}
+.contenido p{
+  text-align: justify;
+  padding-left: 1em;
+  margin: 0;
+}
+.contenido h1{
+  text-align: center;
+  font-weight: bolder;
+}
+.contenido h2{
+  text-align: left;
+  font-weight: bold;
+}
+.contenido h3{
+  text-align: left;
+  font-weight: normal;
+  text-decoration: underline;
+  padding-left: 0.5em;
+}

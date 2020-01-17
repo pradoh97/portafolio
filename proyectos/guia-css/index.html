@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Guía de selectores en CSS</title>
+    <link rel="stylesheet" href="estilos.css">    <meta name="viewport" content="initial-scale=1">
+  </head>
+  <body>
+    <nav id="navbar">
+      <div>
+        <header><h1>Guía de estilo en CSS</h1></header>
+        <span id="mostrar-menu">Mostrar menú</span>
+        <a class="nav-link" href="#Sobre_este_documento">Sobre este documento</a>
+        <a class="nav-link" href="#Motivos_para_implementarlo">Motivos para implementarlo</a>
+        <a class="nav-link" href="#Peso_de_los_selectores">Peso de los selectores</a>
+        <a class="nav-link" href="#Clases">Clases</a>
+        <a class="nav-link" href="#Pseudo...">Pseudo...</a>
+      </div>
+    </nav>
+    <main id="main-doc">
+      <section id="Sobre_este_documento" class="main-section">
+        <header><h1>Sobre este documento</h1></header>
+        <p>Este documento pretende mostrar la importancia de seguir una guía de estilo al momento de escribir código CSS.</p>
+        <p>Algúnos motivos son:
+          <ul>
+            <li>Facilidad de lectura y escritura del código.</li>
+            <li>Una relación de 1 a 1 entre el código y lo que se ve renderizado en el navegador.</li>
+            <li>Escalabilidad, por ejemplo, agregar estilos de forma dinámica mediante algún lenguaje de scripting o programación.</li>
+            <li>Modularidad, por ejemplo, removiendo una apariencia entera de una página sin necesidad de hacer cambios en el código (más que eliminar esa pieza).</li>
+            <li>Prolijidad.</li>
+          </ul>
+        </p>
+      </section>
+      <section id="Motivos_para_implementarlo" class="main-section">
+        <header><h1>Motivos para implementarlo</h1></header>
+        <p>Dejar de ver al código CSS como algo complicado y solo para diseñadores. De hecho es poderoso y útil para desarrolladores. Tomemos el siguiente ejemplo para simular una barra de navegación:</p>
+        <section>
+          <h2>El CSS</h2>
+          <code>
+            nav{
+              <div>
+                display: flex;
+                <br>
+                flex-flow: row nowrap; //evita que los items se muevan a lineas nuevas.
+                <br>
+                background: black; //algo de color.
+              </div>
+            }
+            <br>
+            nav a{
+              <div>
+                padding: 1em; //Usemos tamaños relativos para que se ajuste a los tamaños de letras.
+                <br>
+                color: white; //algo de contraste.
+                <br>
+                text-decoration: none; //removamos el subrayado feo de los enlaces.
+                <br>
+                font-family: sans-serif; //y saquemos esas serifas por el amor de Dios.
+              </div>
+            }
+          </code>
+          <h2>Resultado final</h2>
+          <nav id="ejemplo1">
+            <a href="#">Enlace 1</a>
+            <a href="#">Enlace 2</a>
+          </nav>
+        </section>
+
+        <section>
+          <h2>¿Querés los elementos en el centro?</h2>
+          <code>
+            nav{
+              <div>
+                [...]
+                <br>
+                justify-content: center; //agregado a los estilos anteriores.
+              </div>
+            }
+          </code>
+          <h2>Resultado final</h2>
+          <nav id="ejemplo2">
+            <a href="#">Enlace 1</a>
+            <a href="#">Enlace 2</a>
+          </nav>
+          <p>De esta forma nos ahorramos usar listas desordenadas y muchos items de listas, no utilizamos posicionamiento de ningún tipo mas que el que ofrece un contenedor flexible (flex).</p>
+        </section>
+
+        <section>
+          <h2>¿Un poco más de vida?</h2>
+          <p>¡Por supuesto! vamos a darle vida agregando una pequeña y sutil transisión.</p>
+          <code>
+            nav{
+              <div>
+                [...] //los últimos estilos se mantienen.
+              </div>
+            }
+            <br>
+            nav a:hover{
+              <div>
+                transition-duration: 0.5s;
+                <br>
+                transition-property: background, color;
+                <br>
+                background: white;
+                <br>
+                color: black;
+              </div>
+            }
+          </code>
+          <h2>Resultado final</h2>
+          <nav id="ejemplo3">
+            <a href="#">Enlace 1</a>
+            <a href="#">Enlace 2</a>
+          </nav>
+          <p>Y hasta aquí llegamos con los ejemplos. Vea que fácil es, con la estructura apropiada, crear selectores CSS de bajo peso y cortos. Si el dia de mañana, por algún motivo, necesitaramos cambiar solo uno de los elementos, con tan solo ponerles una clase bastaría (o usar un selector específico sin clases), nada de usar <em>!important</em>.</p>
+        </section>
+      </section>
+
+      <section id="Peso_de_los_selectores" class="main-section">
+        <header><h1>Peso de los selectores</h1></header>
+        <p>Es importante empezar a estructurar el código de forma que haga sentido al leerlo y que no haya necesidad de recorrer un inspector o la página en vivo para saber que es lo que salió mal.</p>
+        <p>Probemos con el siguiente ejemplo, en el que tenemos un grupo de tarjetas y cada tarjeta tiene el mismo formato pero distinto contenido.</p>
+      </section>
+      <section id="Clases" class="main-section">
+        <header><h1>Clases</h1></header>
+        <p>Las clases son muy útiles para modelar una serie de elementos que comparten características. Si bien no es la primer opción que recomiendo, ya que podemos buscar patrones dentro del código y convertirlos en selectores, las clases pueden ser muy útiles a la hora de agregar contenido de forma dinámica, mediante JavaScript o PHP, o cuando necesitamos sobreescribir los estilos de ciertos elementos.</p>
+
+        <section>
+          <h2>El CSS</h2>
+          <p>Hagamos una pequeña grilla de tarjetas que muestren un producto.</p>
+          <code>
+            div{ //div es el contenedor para hacer la grilla
+              <div>
+                display: grid; //hacemos que sea una grilla
+                <br>
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); //una grilla que se ajuste sola
+                <br>
+                grid-auto-rows: 300px;
+                <br>
+                grid-gap: 2em; //para que los items se separen
+              </div>
+            }
+            <br>
+            .tarjeta{
+              <div>
+                box-shadow: 0 0 1em rgba(0, 0, 0, 0.1); //simplemente para ver las distintas tajetas
+                <br>
+                text-align: center;
+                <br>
+                margin: 0;//utilicé figures para cada tarjeta y vienen con un márgen por defecto, asi que lo removí.
+              </div>
+            }
+            <br>
+            .tarjeta img{
+              <div>
+                width: 100%; //para que la imagen no escape del contenedor
+                <br>
+                object-fit: contain; //asi no distorsionamos la relación de aspecto
+                <br>
+                height: 50%; //no quiero que las imagenes tengan distintas alturas
+              </div>
+            }
+          </code>
+          <h2>Resultado final</h2>
+          <div id="ejemplo4">
+            <figure class="tarjeta">
+              <img src="http://www.pngpix.com/wp-content/uploads/2016/07/PNGPIX-COM-Guitar-PNG-Transparent-Image-3.png" alt="una guitarra">
+              <figcaption>Suele tener 6 cuerdas.</figcaption>
+            </figure>
+            <figure class="tarjeta">
+              <img src="http://pngriver.com/wp-content/uploads/2018/04/Download-Gaming-Computer-PNG-Photos.png" alt="una computadora">
+              <figcaption>¡Vamos! Esta tenes que conocerla.</figcaption>
+            </figure>
+            <figure class="tarjeta">
+              <img src="http://restauration2.meosix.fr/lespizzasdumoulin/wp-content/uploads/sites/56/2017/07/pizza.png" alt="una pizza">
+              <figcaption>¡Yumi!</figcaption>
+            </figure>
+            <figure class="tarjeta">
+              <img src="http://www.pngpix.com/wp-content/uploads/2016/06/PNGPIX-COM-White-Renault-Megane-RS-Trophy-Car-PNG-Image.png" alt="un auto">
+              <figcaption>¿Brrum brrum?</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section>
+          <h2>¿Qué pasa si quiero que el texto esté al final de la tarjeta?</h2>
+          <p>Aprovechemos nuestras clases :)</p>
+          <code>
+            div{
+              <div>
+                [...] //los últimos estilos se mantienen.
+              </div>
+            }
+            <br>
+            .tarjeta{
+              <div>
+                [...] //los últimos estilos se mantienen.
+                <br>
+                display: flex;
+                <br>
+                flex-flow: column nowrap;
+                <br>
+                justify-content:space-between;
+              </div>
+            }
+            <br>
+            .tarjeta img{
+              <div>
+                [...] //los últimos estilos se mantienen.
+              </div>
+            }
+          </code>
+          <h2>Resultado final</h2>
+          <div id="ejemplo5">
+            <figure class="tarjeta">
+              <img src="http://www.pngpix.com/wp-content/uploads/2016/07/PNGPIX-COM-Guitar-PNG-Transparent-Image-3.png" alt="una guitarra">
+              <figcaption>Suele tener 6 cuerdas.</figcaption>
+            </figure>
+            <figure class="tarjeta">
+              <img src="http://pngriver.com/wp-content/uploads/2018/04/Download-Gaming-Computer-PNG-Photos.png" alt="una computadora">
+              <figcaption>¡Vamos! Esta tenes que conocerla.</figcaption>
+            </figure>
+            <figure class="tarjeta">
+              <img src="http://restauration2.meosix.fr/lespizzasdumoulin/wp-content/uploads/sites/56/2017/07/pizza.png" alt="una pizza">
+              <figcaption>¡Yumi!</figcaption>
+            </figure>
+            <figure class="tarjeta">
+              <img src="http://www.pngpix.com/wp-content/uploads/2016/06/PNGPIX-COM-White-Renault-Megane-RS-Trophy-Car-PNG-Image.png" alt="un auto">
+              <figcaption>¿Brrum brrum?</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section>
+          <h2>Esas tarjetas se ven muy Mic!%&ft ¿podemos mejorarlas?</h2>
+          <p>Claro ¿las preferis más del estilo G**gle? redondeemos esos bordes:</p>
+          <code>
+            div{
+              <div>
+                [...] //los últimos estilos se mantienen.
+              </div>
+            }
+            <br>
+            .tarjeta{
+              <div>
+                [...] //los últimos estilos se mantienen.
+                <br>
+                border-radius: 5px;
+              </div>
+            }
+            <br>
+            .tarjeta img{
+              <div>
+                [...] //los últimos estilos se mantienen.
+              </div>
+            }
+          </code>
+          <h2>Resultado final</h2>
+          <div id="ejemplo6">
+            <figure class="tarjeta">
+              <img src="http://www.pngpix.com/wp-content/uploads/2016/07/PNGPIX-COM-Guitar-PNG-Transparent-Image-3.png" alt="una guitarra">
+              <figcaption>Suele tener 6 cuerdas.</figcaption>
+            </figure>
+            <figure class="tarjeta">
+              <img src="http://pngriver.com/wp-content/uploads/2018/04/Download-Gaming-Computer-PNG-Photos.png" alt="una computadora">
+              <figcaption>¡Vamos! Esta tenes que conocerla.</figcaption>
+            </figure>
+            <figure class="tarjeta">
+              <img src="http://restauration2.meosix.fr/lespizzasdumoulin/wp-content/uploads/sites/56/2017/07/pizza.png" alt="una pizza">
+              <figcaption>¡Yumi!</figcaption>
+            </figure>
+            <figure class="tarjeta">
+              <img src="http://www.pngpix.com/wp-content/uploads/2016/06/PNGPIX-COM-White-Renault-Megane-RS-Trophy-Car-PNG-Image.png" alt="un auto">
+              <figcaption>¿Brrum brrum?</figcaption>
+            </figure>
+          </div>
+        </section>
+      </section>
+
+      <section id="Pseudo..." class="main-section">
+        <header><h1>Pseudo...</h1></header>
+        <p>A veces podemos pasar de usar clases para así usar selectores menos específicos. O en algunos casos hay algún patron que querramos estilizar.</p>
+        <p>Un ejemplo sería, estilizar solo el último párrafo de toda una sección o la primer imagen de un artículo (suponiendo que es una imagen destacada).</p>
+        <p>Siguiendo con el ejemplo anterior, supongamos que queremos hacer que solo la primer tarjeta se vea distinta. Podemos lograrlo aplicando una segunda clase o simplemente utilizando pseudo clases.</p>
+        <section>
+          <h2>El CSS</h2>
+          <code>
+            div{
+              <div>
+                [...] //los últimos estilos se mantienen.
+              </div>
+            }
+            <br>
+            .tarjeta{
+              <div>
+                [...] //los últimos estilos se mantienen.
+              </div>
+            }
+            <br>
+            .tarjeta img{
+              <div>
+                [...] //los últimos estilos se mantienen.
+              </div>
+            }
+            <br>
+            .tarjeta:first-child{ //seleccionamos al primer elemento que tenga la clase .tarjeta de todo el documento.
+              <div>
+                background-color: black; //le aplicamos un fondo horrible
+                <br>
+                color: white; //junto con un color de texto horrible
+                <br>
+                border: 4px dotted white; //y... un borde horrible
+              </div>
+            }
+          </code>
+          <h2>Resultado final</h2>
+          <div id="ejemplo7">
+            <figure class="tarjeta">
+              <img src="http://www.pngpix.com/wp-content/uploads/2016/07/PNGPIX-COM-Guitar-PNG-Transparent-Image-3.png" alt="una guitarra">
+              <figcaption>Suele tener 6 cuerdas.</figcaption>
+            </figure>
+            <figure class="tarjeta">
+              <img src="http://pngriver.com/wp-content/uploads/2018/04/Download-Gaming-Computer-PNG-Photos.png" alt="una computadora">
+              <figcaption>¡Vamos! Esta tenes que conocerla.</figcaption>
+            </figure>
+            <figure class="tarjeta">
+              <img src="http://restauration2.meosix.fr/lespizzasdumoulin/wp-content/uploads/sites/56/2017/07/pizza.png" alt="una pizza">
+              <figcaption>¡Yumi!</figcaption>
+            </figure>
+            <figure class="tarjeta">
+              <img src="http://www.pngpix.com/wp-content/uploads/2016/06/PNGPIX-COM-White-Renault-Megane-RS-Trophy-Car-PNG-Image.png" alt="un auto">
+              <figcaption>¿Brrum brrum?</figcaption>
+            </figure>
+          </div>
+          <p>¿Ventajas? menor especificidad que usar un selector de clase, por ende, me puedo reservar clases para otro uso.</p>
+        </section>
+      </section>
+    </main>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

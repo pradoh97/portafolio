@@ -1,0 +1,130 @@
+/* Desktop layout */
+@media (min-width: 700px){
+  /* Navigation */
+  .grid-container{
+    display: grid;
+    grid-template-columns: min-content 1fr;
+  }
+  nav{
+    height: 100vh;
+  }
+  /* CV Data */
+  .cv-data{
+    margin-top: 2em;
+    display: flex;
+    flex-flow: row wrap;
+    box-sizing: border-box;
+  }
+  .data-section{
+    flex: 1 1 400px;
+  }
+  .data-group{
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+/* Mobile layout */
+@media (max-width: 700px) {
+  nav{
+    flex-flow: column;
+    align-content: center;
+  }
+  .cv-data{
+    margin: 2em 1em 1em;
+  }
+}
+/* Base styles */
+:root{
+  font-size: calc(0.8em + 0.4vmax);
+}
+a{
+  outline-style: none;
+}
+a:visited{
+  color: inherit;
+}
+body{
+  --main-color: rgb(38, 64, 89);
+  color: var(--main-color);
+  margin: 0;
+  font-family: sans-serif;
+}
+/* Navigation */
+nav{
+  display: flex;
+  position: sticky;
+  flex-flow: column wrap;
+  justify-content: center;
+  text-align: center;
+  top: 0;
+  color: white;
+  background-color: var(--main-color);
+  padding: 1em;
+}
+nav span{
+  font-style: italic;
+}
+nav a{
+  padding: 1em;
+}
+nav a:hover:not(.profile), nav a:active:not(.profile){
+  background-color: rgba(255, 255, 255, 1);
+  color: var(--main-color);
+  transition: color 0.5s, background-color 0.5s;
+}
+.profile img{
+  width: 15vmax;
+  max-width: 200px;
+  min-width: 64px;
+  border: 0.2em solid rgba(255,255,255,1);
+  border-radius: 50%;
+}
+.profile h1{
+  margin: 0;
+}
+
+/* main info*/
+.data-section{
+  margin: 0 1em 2em;
+  padding: 1.5em;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+.data-section > h2{
+  text-align: left;
+  text-transform: uppercase;
+  border-bottom: 3px solid var(--main-color);
+  margin: 0.6em 0;
+}
+.data-set{
+  flex: 1 1 300px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content:baseline;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+.data-set > span:first-child{
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--main-color);
+}
+.data-set > h3{
+  flex-basis: 100%;
+  margin: 0;
+  margin-bottom: 0.3em;
+}
+.data-variant{
+  margin-bottom: 0.3em;
+  margin-right: 2em;
+}
+.data-variant > span{
+  display: block;
+  color: black;
+}
+.data-variant span:nth-child(even){
+  font-style: italic;
+  font-size: 0.8rem;
+}
+.data-variant p{
+  margin: 0;
+}

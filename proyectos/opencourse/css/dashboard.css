@@ -1,0 +1,131 @@
+/* Tableta y escritorio */
+@media (min-width: 700px){
+.horizontal {
+	grid-auto-rows: 400px;
+	grid-template-columns: repeat(auto-fill, minmax(300px,max-content));
+}
+	.busqueda{
+		flex-flow: row nowrap;
+	}
+	.busqueda input{
+		flex-grow: 1;
+	}
+	.categorias{
+		flex-flow: row wrap;
+	}
+}
+
+/* Móviles */
+@media (max-width: 700px) {
+	.busqueda{
+		flex-flow: column;
+	}
+	.categorias{
+		flex-flow: column wrap;
+	}
+}
+/* Categorías de cursos y grupos */
+.categorias{
+	border: 2px solid var(--color-enfasis);
+	border-top: 0;
+	display: flex;
+}
+.categorias a{
+	flex-grow: 1;
+	color: var(--color-normal);
+	transition-property: background-color, color;
+	transition-duration: 0.3s;
+	padding: 0.8em;
+}
+.categorias a:hover{
+	color: var(--color-contraste);
+	background-color: var(--color-normal);
+}
+#alternar-categorias{
+	cursor: pointer;
+	padding: 0.5em;
+	border-radius: 0;
+	border: 0;
+	background-color: var(--color-normal);
+	color: var(--color-contraste);
+}
+#alternar-categorias:active{
+	box-shadow: 0 0 1000px rgba(255, 255, 255, 0.2) inset;
+}
+
+/* Formulario de búsqueda */
+.busqueda{
+	display: flex;
+		margin-top: 1em;
+}
+.busqueda button, .busqueda input{
+	height: 3em;
+	font-weight: 100;
+	border-radius: 0;
+	padding: 0 1em;
+}
+.busqueda button{
+	cursor: pointer;
+	border: 0;
+	background-color: var(--color-enfasis);
+	color: var(--color-contraste);
+}
+.busqueda button:active{
+	box-shadow: 0 0 1000px rgba(255, 255, 255, 0.2) inset;
+}
+.busqueda input{
+	border: 1px solid rgb(200, 200, 200);
+	background-color: var(--color-contraste);
+}
+
+/* Grilla de cursos */
+.grilla{
+	margin: 0.5em 0;
+	display: grid;
+	grid-gap: 1em;
+}
+.infinita.horizontal {
+	grid-auto-columns: minmax(300px,max-content);
+	grid-auto-flow: column;
+	margin: 0.5em 0;
+	display: grid;
+	grid-gap: 1em;
+	grid-auto-rows: 400px;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+.tarjeta{
+	border: 1px solid rgb(200, 200, 200);
+	border-bottom: 3px solid var(--color-enfasis);
+	overflow-y: auto;
+}
+.tarjeta figure{
+	margin: 0;
+	background: var(--color-contraste);
+}
+.tarjeta figure img{
+	width: 100%;
+	object-fit: cover;
+	transition: opacity 0.3s;
+}
+.tarjeta figure img:hover{
+	opacity: 0.7;
+}
+.tarjeta figure figcaption{
+	margin-bottom: 1em;
+	font-weight: bold;
+}
+.tarjeta figure figcaption, .tarjeta .resumen{
+	padding-left: 1em;
+	padding-right: 0.5em;
+	box-sizing: border-box;
+}
+.tarjeta .resumen{
+	display: block;
+	text-align: justify;
+}
+
+/* Clases generales */
+.oculto{
+	display: none;
+}

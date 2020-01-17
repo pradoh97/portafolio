@@ -1,1 +1,192 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Proyectos de Hernán Prado</title>
+  </head>
+  <body>
+    <header>
+      <h1>
+          <span>&lt;title&gt;</span>
+          <span><a href="https://www.linkedin.com/in/hernan-prado-juan/" target="_blank">Hernán Prado - Web Dev</a></span>
+          <span>&lt;/title&gt;</span>
+      </h1>
+      <nav>
+        <span>Ver proyectos</span>
+        <a href="#bgun">B Gun</a>
+        <a href="#cv">Mi CV</a>
+        <a href="#editor-texto">Editor de texto</a>
+        <a href="#gasto-semanal">Gasto semanal</a>
+        <a href="#generador-nombres">Generador de nombres</a>
+        <a href="#guia-css">Guía de estilo con CSS</a>
+        <a href="#opencourse">Opencourse</a>
+        <a href="#taskly">Taskly</a>
+        <a href="#wrox">Wrox reelaborado</a>
+      </nav>
+    </header>
+    <main>
+      <div class="proyecto" id="bgun">
+        <div class="encabezado">
+          <h2><a href="proyectos/bgun/index.html" target="_blank">B Gun</a></h2>
+          <span class="tecnologias">Escrito en HTML y CSS (sin librerías ni frameworks)</span>
+        </div>
+        <figure>
+          <a href="proyectos/bgun/index.html"><img class="vista-previa" src="img/bgun.png" alt="Página B Gun, productores de comidas veganas."></a>
+        </figure>
+        <figcaption>
+          <p>
+            Es una pequeña página para poner en práctica lo aprendido en <a href="https://www.freecodecamp.org/pradoh" target="_blank">Free Code Camp</a>. La consigna consta en crear una página, siguiendo las historias de usuario, para mostrar un producto.
+            <br>
+            En este proyecto decidí usar grillas y flexbox para la disposición responsiva de cada elemento y que se mantenga la armonía de la página.
+          </p>
+        </figcaption>
+      </div>
 
+      <div class="proyecto" id="cv">
+        <div class="encabezado">
+          <h2 ><a href="proyectos/cv/index.html" target="_blank">Mi CV</a></h2>
+          <span class="tecnologias">Escrito en HTML y CSS (sin librerías ni frameworks)</span>
+        </div>
+        <figure>
+          <a href="proyectos/cv/index.html" target="_blank"><img class="vista-previa" src="img/cv.png" alt="Curriculum vitae de Hernán Prado, desarrollador de software."></a>
+        </figure>
+        <figcaption>
+          <p>
+            Estaba un poco cansado de los formatos de CV tradicionales, hoja A4, probablemente columnas, así que decidí sumarme a la movida web y crear una pequeña página mostrando un resumen de mi historial laboral, mis aptitudes técnicas, personales e interpersonales y mis estudios.
+            <br>
+            Decidí hacer una página simple y modular, el código se puede extender y reutilizar para otros modelos de documentos en los que el contenido se ubique en tarjetas.
+          </p>
+          <p>Obvio que después cuando llegaron los video CVs quedé desactualizado... de nuevo je.</p>
+        </figcaption>
+      </div>
+
+      <div class="proyecto" id="editor-texto">
+        <div class="encabezado">
+          <h2><a href="proyectos/editor-texto/index.html" target="_blank">Editor de Texto</a></h2>
+          <span class="tecnologias">Escrito en HTML, CSS y Javascrpt (sin librerías ni frameworks)</span>
+        </div>
+        <figure>
+          <a href="proyectos/editor-texto/index.html" target="_blank"><img class="vista-previa" src="img/editor-texto.png" alt="YATE (yet another text editor) un editor de texto sencillo para embeber en páginas webs."></a>
+        </figure>
+        <figcaption>
+          <p>
+            Este proyecto en realidad es una pequeña herramienta que quiero embeber en <a href="#opencourse">Opencourse</a> y disponibilizarla bajo una licencia libre para que los desarrolladores puedan embeber un editor de texto sin restricciones a sus webs.
+            <br>
+            Cuando lo comencé sabía muy poco de Javascript, así que busqué ayuda teniendo la interfaz y algunas funcionalidades hechas. Lamentablemente es difícil encontrar gente que quiera colaborar en un proyecto ad-honorem. No los culpo, nadie vive del aire.
+          </p>
+        </figcaption>
+      </div>
+
+      <div class="proyecto" id="gasto-semanal">
+        <div class="encabezado">
+          <h2><a href="proyectos/gasto-semanal/index.html" target="_blank">Gasto semanal</a></h2>
+          <span class="tecnologias">Escrito en HTML, CSS y Javascrpt (sin librerías ni frameworks). Utiliza Local Storage</span>
+        </div>
+        <figure>
+          <a href="proyectos/gasto-semanal/index.html" target="_blank"><img class="vista-previa" src="img/gasto-semanal.png" alt="Una pequeña aplicación para el cálculo de gastos."></a>
+        </figure>
+        <figcaption>
+          <p>
+            Se trata de un proyecto de un curso de Javascript en el que, el instructor, te brinda la estructura y los estilos del documento y te deja hacer la funcionalidad.
+            <br>
+            Decidí hacer todo desde cero omitiendo el uso de librerias CSS y así conseguí reducir el peso del proyecto.
+          </p>
+        </figcaption>
+      </div>
+
+      <div class="proyecto" id="generador-nombres">
+        <div class="encabezado">
+          <h2><a href="proyectos/generador-nombres/index.html" target="_blank">Generador de nombres</a></h2>
+          <span class="tecnologias">Escrito en HTML, CSS y Javascrpt (sin librerías ni frameworks)</span>
+        </div>
+        <figure>
+          <a href="proyectos/generador-nombres/index.html" target="_blank"><img class="vista-previa" src="img/generador-nombres.png" alt="Una pequeña aplicación que te ayuda a decidir el nombre para tu futuro/a hijo/a."></a>
+        </figure>
+        <figcaption>
+          <p>
+            Dentro del curso que mencionaba antes, uno de los proyectos consiste en obtener nombres consumiendo API a través de fetch API.
+            <br>
+            De nuevo, la maquetación y los estilos fueron hechos de cero y fué un lindo proyecto para comenzar a trabajar con APIs externas.
+          </p>
+          <p>¡Adelante, generá el nombre para tu futura bendición!.</p>
+        </figcaption>
+      </div>
+
+      <div class="proyecto" id="guia-css">
+        <div class="encabezado">
+          <h2><a href="proyectos/guia-css/index.html" target="_blank">Guía de estilo con CSS</a></h2>
+          <span class="tecnologias">Escrito en HTML y CSS (sin librerías ni frameworks)</span>
+        </div>
+        <figure>
+          <a href="proyectos/guia-css/index.html" target="_blank"><img class="vista-previa" src="img/guia-css.png" alt="Una pequeña guía para que escribir hojas de estilo no resulte tedioso."></a>
+        </figure>
+        <figcaption>
+          <p>
+            Otro de los proyectos que propone <a href="https://www.freecodecamp.org/pradoh" target="_blank">Free Code Camp</a> es crear una página de documentación. Se me ocurrió llevarlo un poco a otro nivel y redactar una breve, aún así propia, guía de estilo con CSS.
+            <br>
+            Me concentré en generar un contenido similar al de <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient" target="_blank">MDN</a> o <a href="https://www.w3schools.com/cssref/css3_pr_mediaquery.asp" target="_blank">W3schools</a> en el sentido de tener el código y el resultado con el que se puede interactuar en vivo.
+          </p>
+          <p>Te invito a leerla, quizás conozcas algo nuevo sobre CSS.</p>
+        </figcaption>
+      </div>
+
+      <div class="proyecto" id="opencourse">
+        <div class="encabezado">
+          <h2><a href="proyectos/opencourse/dashboard.html" target="_blank">Opencourse</a></h2>
+          <span class="tecnologias">Escrito en HTML y CSS (sin librerías ni frameworks)</span>
+        </div>
+        <figure>
+          <a href="proyectos/opencourse/dashboard.html" target="_blank"><img class="vista-previa" src="img/opencourse.png" alt="Un boceto para un sitio de cursos, todavía en desarrollo."></a>
+        </figure>
+        <figcaption>
+          <p>
+            Este quizás es el más ambicioso y demandante de los proyectos que tengo en mente, pero como dicen, una cosa a la vez.
+
+            La meta de opencourse no es la de ser un mercado de cursos, sino ser un nexo para profesionales, estudiantes e instructores. Se trata de una plataforma de cursos gratuitos, de código abierto (pueden ser modificados y actualizados) y con espacios para intercambio entre estudiantes.
+            <br>
+            Como dije antes, una cosa a la vez. Este proyecto demanda conocimiento y tiempo, por el momento le dedico dos días a la semana, uno para redactar contenido y otro para construir la plataforma.
+          </p>
+          <p>Si estás interesado/a en saber más de Opencourse o de formar parte del proyecto no dudes en contactarme a través de <a href="https://www.linkedin.com/in/hernan-prado-juan/">mi perfil en linkedin</a>.</p>
+        </figcaption>
+      </div>
+
+      <div class="proyecto" id="taskly">
+        <div class="encabezado">
+          <h2><a href="proyectos/taskly/index.html" target="_blank">Taskly</a></h2>
+          <span class="tecnologias">Escrito en HTML, CSS y Javascript (sin librerías ni frameworks)</span>
+        </div>
+        <figure>
+          <a href="proyectos/taskly/index.html" target="_blank"><img class="vista-previa" src="img/taskly.png" alt="Una pequeña aplicación para organizar tareas."></a>
+        </figure>
+        <figcaption>
+          <p>
+            Otro proyecto de aquel curso de Udemy que te mencione. En este caso se trata de un gestor de tareas, pero el proyecto del curso era un poco más simple, así que le fuí y le voy a seguir agregando características.
+            <br>
+            Lo que se viene en el roadmap es la autenticación. Quiero llevar la aplicación de ser auto-alojada, esto quiere decir que el usuario tiene que encargarse de instalarla y alojarla para tenerla disponible, a disponibilizarla online y así cada persona pueda acceder a sus tareas de cualqier lado. El roadmap sigue pero no vale la pena mencionarlo en este resumen.
+          </p>
+          <p>Si estás interesado/a en saber más de Opencourse o de formar parte del proyecto no dudes en contactarme a través de <a href="https://www.linkedin.com/in/hernan-prado-juan/">mi perfil en linkedin</a>.</p>
+        </figcaption>
+      </div>
+
+      <div class="proyecto" id="wrox">
+        <div class="encabezado">
+          <h2><a href="proyectos/wrox/index.html" target="_blank">Wrox reelaborado</a></h2>
+          <span class="tecnologias">Escrito en HTML, CSS y Javascript (sin librerías ni frameworks). Antes que veas el proyecto, te invito a ver el  <a href="http://www.wrox.com/WileyCDA/" target="_blank">sitio original</a>.</span>
+        </div>
+        <figure>
+          <a href="proyectos/wrox/index.html" target="_blank"><img class="vista-previa" src="img/wrox.png" alt="Una pequeña aplicación para organizar tareas."></a>
+        </figure>
+        <figcaption>
+          <p>
+            Comencé a leer libros de este editor (creo que es el editor) sobre programación, bastante buenos. Pero cuando vi la página me llamó demasiado la atención que tengan una versión legacy con tanto contenido sobre programación.
+            <br>
+            Así que me puse la camiseta y les hice una versión responsiva, simple pero se acerca más a las tendencias de diseño actuales.
+          </p>
+        </figcaption>
+      </div>
+    </main>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

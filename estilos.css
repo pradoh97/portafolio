@@ -1,0 +1,136 @@
+@media (max-width: 500px){
+  header nav{
+    flex-flow: column;
+    flex-grow: 1;
+  }
+  header h1{
+    font-size: 2em;
+  }
+}
+@media (min-width: 500px){
+  header nav{
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  header nav span{
+    display: block;
+  }
+  header h1{
+    font-size: 3em;
+  }
+}
+
+:root{
+  font-size: calc(0.6em + 0.2vmax);
+}
+body{
+  font-family: sans-serif;
+  margin: 0;
+  --color-enfasis: rgb(80, 150, 200);
+  --color-contraste: rgb(255, 255, 255);
+  --color-contraste-light: rgb(245, 245, 245);
+  --color-normal: rgb(40, 40, 40);
+  --color-normal-light: rgb(110, 118, 128);
+  --color-resaltado: rgb(0, 204, 102);
+  color: var(--color-normal);
+  background: var(--color-contraste-light);
+}
+a{
+  outline: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+header a:hover, header a:focus{
+  text-decoration: underline;
+  text-shadow: 0 0 0.02em var(--color-contraste);
+}
+main a:hover, main a:focus{
+  color: var(--color-normal-light);
+}
+
+/* REGLAS COMUNES */
+header, header h1{
+  display: flex;
+  flex-flow: row wrap;
+}
+header nav a, header nav span{
+  padding: 1em;
+}
+
+header nav span, header h1 span:nth-child(odd){
+  flex-basis: 100%;
+}
+header{
+  position: sticky;
+  top: 0;
+  justify-content: center;
+  background-color: var(--color-normal);
+  color: var(--color-contraste);
+}
+header h1{
+  margin: 0;
+  padding: 0.5em 1em;
+}
+header h1 span:nth-child(even){
+  margin-left: 2em;
+}
+header h1 span:nth-child(odd){
+  color: var(--color-resaltado);
+}
+header nav{
+  display: flex;
+  font-size: 1.2em;
+  border-top: 2px solid var(--color-contraste);
+  padding: 1em 0;
+  flex-grow: 1;
+  width: 100%;
+}
+header nav span{
+  cursor: pointer;
+  text-align: center;
+}
+main{
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1em;
+  justify-content: center;
+}
+.proyecto{
+  flex-basis: 400px;
+  flex-grow: 1;
+  max-width: 800px;
+  height: 100%;
+  margin: 1em 2em;
+  text-align: justify;
+  background: var(--color-contraste);
+  display: flex;
+  flex-flow: column;
+}
+.proyecto a{
+  text-decoration: underline;
+}
+.proyecto .encabezado{
+  padding: 0 1em;
+  order: 2;
+}
+.proyecto .tecnologias{
+  font-style: italic;
+  color: var(--color-normal-light);
+}
+.proyecto figure{
+  margin: 0;
+  margin-bottom: 1em;
+  order: 1;
+}
+.proyecto figcaption{
+  padding: 1em;
+  order: 3;
+}
+.proyecto h2{
+  margin: 0;
+}
+.proyecto img{
+  min-width: 200px;
+  width: 100%;
+}

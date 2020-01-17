@@ -1,0 +1,112 @@
+@media (max-width: 500px){
+  body > div{
+    margin: 1em;
+    justify-content: center;
+  }
+  form, .listado{
+    padding: 1em;
+    flex-basis: 100%;
+    text-align: center;
+  }
+}
+@media (min-width: 500px){
+  form, .listado{
+    padding: 1em;
+    text-align: center;
+  }
+  body > div{
+    padding: 1em;
+    margin: auto;
+    width: 70%;
+  }
+}
+:root{
+  font-size: calc(0.7em + 0.5vmax);
+}
+body{
+  font-family: sans-serif;
+  background: linear-gradient(90deg, #2193b0, #6dd5ed);
+}
+h2{
+  font-size: 3em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  text-align: center;
+}
+
+body > div{
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  background: rgb(255, 255, 255);
+  padding-bottom: 3em;
+}
+
+form, .listado{
+  text-align: center;
+}
+
+form{
+  display: flex;
+  flex-flow: column nowrap;
+  flex-grow: 1;
+}
+label{
+  text-align: left;
+}
+label, select, input, button{
+  font-weight: 100;
+  font-size: 1em;
+}
+select, input, button{
+  padding: 0.5em;
+}
+select, input{
+  background: none;
+  border: 1px solid rgb(180, 180, 180);
+}
+button{
+  margin-top: 1em;
+  color: rgb(255, 255, 255);
+  background: rgb(109, 213, 237);
+  border: none;
+  cursor: pointer;
+}
+button::-moz-focus-inner{
+  border: none;
+}
+button:hover{
+  background: rgb(93, 192, 214);
+}
+button:active{
+  background: rgb(74, 173, 195);
+}
+button:disabled{
+  background: rgb(180, 180, 180);
+  cursor:not-allowed;
+}
+select + label{
+  margin-top: 1em;
+}
+
+.listado{
+  flex-grow: 2;
+}
+.listado h3{
+  font-size: 2em;
+  margin-top: 0;
+  font-weight: 100;
+}
+.listado div{
+  padding: 1em;
+  margin: 0 1em;
+  border: 2px solid rgb(109, 213, 237);
+  background: rgb(167, 232, 247);
+}
+.listado div p{
+  font-size: 0.9em;
+  color: rgb(255, 255, 255);
+  margin: 0.5em;
+}
