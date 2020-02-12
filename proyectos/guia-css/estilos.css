@@ -39,9 +39,6 @@ body{
 main{
   padding: 0 1em;
 }
-header{
-  padding: 0 1em;
-}
 h1, h2{
   border-top: 2px solid black;
   border-bottom: 2px solid black;
