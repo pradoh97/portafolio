@@ -64,37 +64,9 @@ nav a{
 section section{
   margin: 1em 2em 1em 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+nav header{
+  padding: 0 1em;
+}
 
 #ejemplo1, #ejemplo2, #ejemplo3{
   display: flex;
