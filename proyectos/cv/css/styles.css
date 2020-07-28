@@ -72,7 +72,7 @@ nav a:hover:not(.profile), nav a:active:not(.profile){
 }
 .profile img{
   width: 15vmax;
-  max-width: 200px;
+  max-width: 150px;
   min-width: 64px;
   border: 0.2em solid rgba(255,255,255,1);
   border-radius: 50%;
