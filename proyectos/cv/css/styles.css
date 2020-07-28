@@ -11,8 +11,6 @@
   /* CV Data */
   .cv-data{
     margin-top: 2em;
-    display: flex;
-    flex-flow: row wrap;
     box-sizing: border-box;
   }
   .data-section{
