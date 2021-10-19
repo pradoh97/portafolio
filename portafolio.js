@@ -1,4 +1,5 @@
 const PROYECTOS_MOSTRAR = 3;
+const EXTENSION_PORTADA = '.jpg';
 
 let metadatosProyecto = [];
 let url = [];
@@ -12,7 +13,7 @@ class Proyecto {
   constructor(nombre, repositorio, portada) {
     this.nombre = nombre.replace(/^\w/, (c) => c.toUpperCase());
     this.repositorio = url['codigo'] + repositorio;
-    this.portada = url['portada'] + portada,
+    this.portada = url['portada'] + portada + EXTENSION_PORTADA,
     this.vivo = url['vivo'] + repositorio
   }
 }
@@ -23,35 +24,35 @@ url['portada'] = 'img/';
 
 metadatosProyecto['reproductor de musica'] = {
   'repositorio': 'reproductor-de-musica-web/',
-  'portada': 'reproductor.png'
+  'portada': 'reproductor'
 };
 metadatosProyecto['taskly'] = {
   'repositorio': 'taskly/',
-  'portada': 'taskly.png'
+  'portada': 'taskly'
 };
 metadatosProyecto['galeria de fotos'] = {
   'repositorio': 'img-slider/',
-  'portada': 'galería.png'
+  'portada': 'galería'
 };
 metadatosProyecto['tarjetas de productos'] = {
   'repositorio': 'A-bit-of-CSS-and-HTML/Sesion%202%20-%20tarjetas/Mercado%20Libre/',
-  'portada': 'tarjetas.png'
+  'portada': 'tarjetas'
 };
 metadatosProyecto['carrito de compras'] = {
   'repositorio': 'cursos-pagos/',
-  'portada': 'carrito.png'
+  'portada': 'carrito'
 };
 metadatosProyecto['opencourse'] = {
   'repositorio': 'opencourse/',
-  'portada': 'opencourse.png'
+  'portada': 'opencourse'
 };
 metadatosProyecto['planes'] = {
   'repositorio': 'frontend-challenge-3/',
-  'portada': 'planes.png'
+  'portada': 'planes'
 };
 metadatosProyecto['wrox'] = {
   'repositorio': 'wrox-remake/',
-  'portada': 'wrox.png'
+  'portada': 'wrox'
 };
 
 botonAccion['izquierda'] = document.querySelector('.controles button:first-child');
@@ -106,10 +107,10 @@ function actualizarGaleria(direccion = 0){
 
     if(proyecto == 1){
       let probarVivo = document.querySelector('.controles a');
-      probarVivo.href = proyectos[proyecto].vivo;
+      probarVivo.href = proyectos[proyecto].repositorio;
     }
 
-    proyectosDOM[proyecto].href = proyectos[proyecto].repositorio;
+    proyectosDOM[proyecto].href = proyectos[proyecto].vivo;
     proyectosDOM[proyecto].title = proyectos[proyecto].nombre;
 
     portada.src = proyectos[proyecto].portada;
