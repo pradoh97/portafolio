@@ -3,6 +3,7 @@ const EXTENSION_PORTADA = '.jpg';
 
 let metadatosProyecto = [];
 let url = [];
+let portada = []
 
 let galeria;
 let proyectos = [];
@@ -11,9 +12,9 @@ let botonAccion = [];
 
 class Proyecto {
   constructor(nombre, repositorio, portada) {
-    this.nombre = nombre.replace(/^\w/, (c) => c.toUpperCase());
+    this.nombre = nombre;
     this.repositorio = url['codigo'] + repositorio;
-    this.portada = url['portada'] + portada + EXTENSION_PORTADA,
+    this.portada = portada;
     this.vivo = url['vivo'] + repositorio
   }
 }
@@ -63,12 +64,22 @@ document.addEventListener('keydown', moverConFlechas);
 
 iniciarGaleria();
 
+function cargarImagenes(url){
+    return new Image().src = url;
+}
+
 //Carga los 3 primeros proyectos a la galería.
 function iniciarGaleria() {
   galeria = document.querySelector('.galeria');
 
   for(proyecto in metadatosProyecto){
-    let proyectoNuevo = new Proyecto(proyecto, metadatosProyecto[proyecto].repositorio, metadatosProyecto[proyecto].portada);
+    let nombre = proyecto.replace(/^\w/, (c) => c.toUpperCase());
+    let uriPortada = url['portada'] + metadatosProyecto[proyecto].portada + EXTENSION_PORTADA;
+
+    let proyectoNuevo = new Proyecto(nombre, metadatosProyecto[proyecto].repositorio, uriPortada);
+
+    portada[nombre] = cargarImagenes(uriPortada);
+
     proyectos.push(proyectoNuevo);
   }
 
@@ -77,8 +88,8 @@ function iniciarGaleria() {
     proyectosDOM[i].classList.add('galeria__proyecto');
     proyectosDOM[i].target = "_blank"
 
-    let portada = document.createElement('img');
     let titulo = document.createElement('h2');
+    let portada = document.createElement('img');
 
     if(i != 1) proyectosDOM[i].classList.add('small');
 
@@ -86,7 +97,6 @@ function iniciarGaleria() {
     proyectosDOM[i].appendChild(titulo);
     galeria.appendChild(proyectosDOM[i]);
   }
-
   actualizarGaleria();
 }
 
@@ -102,7 +112,6 @@ function actualizarGaleria(direccion = 0){
   }
 
   for(proyecto in proyectosDOM){
-    let portada = proyectosDOM[proyecto].querySelector('img');
     let titulo = proyectosDOM[proyecto].querySelector('h2');
 
     if(proyecto == 1){
@@ -112,8 +121,7 @@ function actualizarGaleria(direccion = 0){
 
     proyectosDOM[proyecto].href = proyectos[proyecto].vivo;
     proyectosDOM[proyecto].title = proyectos[proyecto].nombre;
-
-    portada.src = proyectos[proyecto].portada;
+    proyectosDOM[proyecto].firstChild.src = portada[proyectos[proyecto].nombre];
     titulo.innerText = proyectos[proyecto].nombre;
 
   }
