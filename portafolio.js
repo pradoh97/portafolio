@@ -119,7 +119,6 @@ function actualizarGaleria(direccion = 0){
 }
 
 function moverConFlechas(e){
-  console.log(e.keyCode);
   if(e.keyCode == '37') actualizarGaleria(-1);
   if(e.keyCode == '39') actualizarGaleria(1);
 }
