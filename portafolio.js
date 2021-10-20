@@ -92,7 +92,6 @@ function iniciarGaleria() {
     let portada = document.createElement('img');
 
     if(i != 1) proyectosDOM[i].classList.add('small');
-
     proyectosDOM[i].appendChild(portada);
     proyectosDOM[i].appendChild(titulo);
     galeria.appendChild(proyectosDOM[i]);
@@ -113,17 +112,19 @@ function actualizarGaleria(direccion = 0){
 
   for(proyecto in proyectosDOM){
     let titulo = proyectosDOM[proyecto].querySelector('h2');
+    let imagen = proyectosDOM[proyecto].querySelector('img');
 
     if(proyecto == 1){
       let probarVivo = document.querySelector('.controles a');
       probarVivo.href = proyectos[proyecto].repositorio;
+      imagen.classList.remove('visible');
+      setTimeout(imagen => {imagen.classList.add('visible')}, 50, imagen);
     }
 
     proyectosDOM[proyecto].href = proyectos[proyecto].vivo;
     proyectosDOM[proyecto].title = proyectos[proyecto].nombre;
     proyectosDOM[proyecto].firstChild.src = portada[proyectos[proyecto].nombre];
     titulo.innerText = proyectos[proyecto].nombre;
-
   }
 }
 
