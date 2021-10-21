@@ -95,6 +95,9 @@ a:focus{
   align-items: center;
   gap: 1em;
 }
+.galeria .galeria__proyecto.small:hover, .galeria .galeria__proyecto.small:focus{
+  transform: scale(1.2);
+}
 @media (min-width: 40em){
   .galeria{
     display: flex;
@@ -107,15 +110,16 @@ a:focus{
   .galeria__proyecto.small h2{
     visibility: visible;
   }
+  .galeria .galeria__proyecto.small:hover, .galeria .galeria__proyecto.small:focus{
+    transform: scale(0.8);
+  }
 }
 .galeria .galeria__proyecto{
   transition-property: transform;
-  transition-duration: 0.75s;
+  transition-duration: 0.5s;
   position: relative;
 }
-.galeria .galeria__proyecto.small:hover, .galeria .galeria__proyecto.small:focus{
-  transform: scale(1);
-}
+
 .galeria .galeria__proyecto:hover img,.galeria .galeria__proyecto:focus img{
   filter: none;
 }
