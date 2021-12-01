@@ -27,6 +27,10 @@ metadatosProyecto['reproductor de musica'] = {
   'repositorio': 'reproductor-de-musica-web/',
   'portada': 'reproductor'
 };
+metadatosProyecto['vuelta'] = {
+  'repositorio': 'vuelta/',
+  'portada': 'vuelta'
+};
 metadatosProyecto['taskly'] = {
   'repositorio': 'taskly/',
   'portada': 'taskly'
